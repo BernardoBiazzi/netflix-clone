@@ -17,6 +17,7 @@ h3 {
     padding: 0px 3.2vw;
     display: flex;
     overflow-x: scroll;
+    scroll-behavior: smooth;
     gap: 10px;
 }
 
@@ -26,12 +27,18 @@ h3 {
 
 .carousel-item {
     position: relative;
+    cursor: pointer;
 }
 
 .carousel-item img {
     width: clamp(200px, 15vw, 341px);
     aspect-ratio: 16/9;
     border-radius: 4px;
+    transition: scale 0.1s ease;
+}
+
+.carousel-item img:hover {
+    scale: 0.95;
 }
 
 .left-button,
@@ -40,14 +47,32 @@ h3 {
     width: 3vw;
     height: calc(100% - 2.5vw);
     z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: rgba(255, 255, 255, 0.3);
+    font-size: 2vw;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .left-button,
+    .right-button {
+        display: none;
+    }
+}
+
+.left-button:hover,
+.right-button:hover {
+    color: white;
 }
 
 .left-button {
-    background-image: linear-gradient(90deg, #1414149e, transparent 90%);
+    background-image: linear-gradient(90deg, #141414, transparent 90%);
     left: 0;
 }
 
 .right-button {
-    background-image: linear-gradient(270deg, #1414149e, transparent 90%);
+    background-image: linear-gradient(270deg, #141414, transparent 90%);
     right: 0;
 }
