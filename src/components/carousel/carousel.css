@@ -1,0 +1,53 @@
+.carousel-container {
+    margin-bottom: 2.5vw;
+    position: relative;
+    z-index: 1;
+}
+
+h3 {
+    margin-left: 3.2vw;
+    margin-bottom: 0.5em;
+    font-weight: 500;
+    font-size: clamp(15px, 1.4vw, 28px);
+    color: white;
+    position: relative;
+}
+
+.carousel {
+    padding: 0px 3.2vw;
+    display: flex;
+    overflow-x: scroll;
+    gap: 10px;
+}
+
+.carousel::-webkit-scrollbar {
+    display: none;
+}
+
+.carousel-item {
+    position: relative;
+}
+
+.carousel-item img {
+    width: clamp(200px, 15vw, 341px);
+    aspect-ratio: 16/9;
+    border-radius: 4px;
+}
+
+.left-button,
+.right-button {
+    position: absolute;
+    width: 3vw;
+    height: calc(100% - 2.5vw);
+    z-index: 1;
+}
+
+.left-button {
+    background-image: linear-gradient(90deg, #1414149e, transparent 90%);
+    left: 0;
+}
+
+.right-button {
+    background-image: linear-gradient(270deg, #1414149e, transparent 90%);
+    right: 0;
+}
