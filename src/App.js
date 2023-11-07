@@ -15,6 +15,13 @@ const carousels = [
       { id: 5, url: 'https://pbs.twimg.com/media/E_bH_i3VcAAZEvt.jpg' },
       { id: 6, url: 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/virus-movie-poster-facebook-ad-design-template-a2e965381bf4b751199ac78dd1662d0d_screen.jpg' },
       { id: 7, url: 'https://cdn.binalogue.com/los-fierros-thumb-16-9.png' },
+      { id: 8, url: 'https://cdn.binalogue.com/los-fierros-thumb-16-9.png' },
+      { id: 9, url: 'https://kfg.pl/wp-content/uploads/2020/11/MAIN_POSTER_Awaken-film-poster-01-16x9-300dpi.jpg' },
+      { id: 10, url: 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/dramatic-movie-poster-template-design-f0f2c261e077379d0f82604f96b6a774_screen.jpg' },
+      { id: 11, url: 'https://pernambucotem.com/wp-content/uploads/2023/09/IMG_0533.jpeg' },
+      { id: 12, url: 'https://i0.wp.com/musically.com/wp-content/uploads/2023/08/Metal-Fest-Megadeth-Event-Key-Art-16-9.png' },
+      { id: 13, url: 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/horror-movie-facebook-video-design-template-f45b265ae0594ee9fc171ad2ba92ea1c_screen.jpg' },
+      { id: 14, url: 'https://s3.us-west-2.amazonaws.com/org.hollywoodtheatre.m/media/images/oppenheimer_70mm_on_sale_now_16-9.width-800.jpg' },
     ],
   },
   { 
