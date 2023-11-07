@@ -8,6 +8,7 @@ const carousels = [
     id: 1, 
     title: 'Populares na netflix',
     items: [
+      { url: 'https://s3.us-west-2.amazonaws.com/org.hollywoodtheatre.m/media/images/oppenheimer_70mm_on_sale_now_16-9.width-800.jpg' },
       { url: 'https://pbs.twimg.com/media/FX6-pkraIAE0S7b.jpg' },
       { url: 'https://media.wired.co.uk/photos/606dacfc1dcb46afc3a1dac5/16:9/w_1920,h_1080,c_limit/Guardians.jpg' },
       { url: 'https://georgespigot.files.wordpress.com/2012/11/looper-01.jpg' },
@@ -20,7 +21,6 @@ const carousels = [
       { url: 'https://pernambucotem.com/wp-content/uploads/2023/09/IMG_0533.jpeg' },
       { url: 'https://i0.wp.com/musically.com/wp-content/uploads/2023/08/Metal-Fest-Megadeth-Event-Key-Art-16-9.png' },
       { url: 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/horror-movie-facebook-video-design-template-f45b265ae0594ee9fc171ad2ba92ea1c_screen.jpg' },
-      { url: 'https://s3.us-west-2.amazonaws.com/org.hollywoodtheatre.m/media/images/oppenheimer_70mm_on_sale_now_16-9.width-800.jpg' },
     ],
   },
   { 
