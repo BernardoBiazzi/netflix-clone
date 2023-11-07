@@ -19,22 +19,26 @@ const Carousel = ({ title, items }) => {
     } 
 
     const handleLeft = () => {
-        const newPosition = carouselRef.current.scrollLeft - (6 * getItemWidth());
-        carouselRef.current.scrollLeft = newPosition;
+        const carousel = carouselRef.current;
+        const newPosition = carousel.scrollLeft - (6 * getItemWidth());
+        carousel.scrollLeft = newPosition;
         setTimeout(() => {
             setEnableRightArrow(true);
-            setScrollPosition(carouselRef.current.scrollLeft);
+            setScrollPosition(carousel.scrollLeft);
         },600);
     };
 
     const handleRight = () => {
         const carousel = carouselRef.current;
-        const newPosition = carousel.scrollLeft + (6 * getItemWidth());
-        carousel.scrollLeft =  newPosition;
+        const newPosition = enableRightArrow ? carousel.scrollLeft + (6 * getItemWidth()) : 0;
+        carousel.scrollLeft = newPosition;
         setTimeout(() => {
             setScrollPosition(carousel.scrollLeft);
-            if (newPosition >= carousel.scrollWidth - carousel.clientWidth) {
+            const scrollLimit = carousel.scrollWidth - carousel.clientWidth;
+            if (newPosition >= scrollLimit) {
                 setEnableRightArrow(false);
+            } else {
+                setEnableRightArrow(true);
             }
         },600);
     };
@@ -44,8 +48,7 @@ const Carousel = ({ title, items }) => {
             <h3>{title}</h3>
             {scrollPosition > 0 && 
             <div className="left-button" onClick={handleLeft}><FaChevronLeft/></div>}
-            {enableRightArrow && 
-            <div className="right-button" onClick={handleRight}><FaChevronRight/></div>}
+            <div className="right-button" onClick={handleRight}><FaChevronRight/></div>
             <div className="carousel" ref={carouselRef}>
                 {items.map((item) => {
                     return (
