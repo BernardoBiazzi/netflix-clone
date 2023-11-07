@@ -55,4 +55,9 @@
     color: white;
     padding: 0;
     font-size: 24px;
+    cursor: pointer;
+}
+
+.right-side span {
+    cursor: pointer;
 }

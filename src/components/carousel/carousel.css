@@ -50,9 +50,12 @@ h3 {
     display: flex;
     align-items: center;
     justify-content: center;
-    color: rgba(255, 255, 255, 0.5);
+    color: transparent;
     font-size: 2vw;
     cursor: pointer;
+    transition: all 0.1s ease;
+    background: #1414148a;
+    border-radius: 4px;
 }
 
 @media (max-width: 768px) {
@@ -63,16 +66,20 @@ h3 {
 }
 
 .left-button {
-    background-image: linear-gradient(90deg, #141414, transparent 90%);
     left: 0;
 }
 
 .right-button {
-    background-image: linear-gradient(270deg, #141414, transparent 90%);
     right: 0;
+}
+
+.carousel-container:hover .left-button,
+.carousel-container:hover .right-button {
+    color: white;
 }
 
 .left-button:hover,
 .right-button:hover {
-    color: white;
+    font-size: 2.4vw;
+    background: #141414c9;
 }
