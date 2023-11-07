@@ -39,7 +39,7 @@ const Carousel = ({ title, items }) => {
 
     const rightClick = () => {
         const carousel = carouselRef.current;
-        const newPosition = enableRightArrow ? carousel.scrollLeft + (6 * getItemWidth()) : 0;
+        const newPosition = carousel.scrollLeft + (6 * getItemWidth());
         carousel.scrollLeft = newPosition;
         const scrollLimit = carousel.scrollWidth - carousel.clientWidth;
         if (newPosition >= scrollLimit) {
@@ -54,7 +54,8 @@ const Carousel = ({ title, items }) => {
             <h3>{title}</h3>
             {scrollPosition > 0 && 
             <div className="left-button" onClick={leftClick}><FaChevronLeft/></div>}
-            <div className="right-button" onClick={rightClick}><FaChevronRight/></div>
+            {enableRightArrow && 
+            <div className="right-button" onClick={rightClick}><FaChevronRight/></div>}
             <div className="carousel" ref={carouselRef}>
                 {items.map((item) => {
                     return (
