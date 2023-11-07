@@ -1,6 +1,6 @@
 /* eslint-disable jsx-a11y/alt-text */
 import './carousel.css';
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Carousel = ({ title, items }) => {
@@ -11,23 +11,43 @@ const Carousel = ({ title, items }) => {
         const firstItem = document.querySelector('.carousel-item');
         if (firstItem) {
             const itemRect = firstItem.getBoundingClientRect();
-            return itemRect.width;
+            return itemRect.width + 10;
         } else {
             return 0;
         }
     } 
 
     const handleLeft = () => {
-        const newPosition = carouselRef.current.scrollLeft - (6 * getItemWidth() + 60);
+        const newPosition = carouselRef.current.scrollLeft - (6 * getItemWidth());
         carouselRef.current.scrollLeft = newPosition;
-        setTimeout(() => {setScrollPosition(carouselRef.current.scrollLeft)},600);
+        setTimeout(() => {
+            setScrollPosition(carouselRef.current.scrollLeft)
+        },600);
     };
 
     const handleRight = () => {
-        const newPosition = carouselRef.current.scrollLeft + (6 * getItemWidth() + 60);
-        carouselRef.current.scrollLeft =  newPosition;
-        setTimeout(() => {setScrollPosition(carouselRef.current.scrollLeft)},600);
+        const carousel = carouselRef.current;
+        const newPosition = carousel.scrollLeft + (6 * getItemWidth());
+        carousel.scrollLeft =  newPosition;
+        setTimeout(() => {
+            if (newPosition >= carousel.scrollWidth - carousel.clientWidth) {
+                items.push(...items);
+            }
+            setScrollPosition(carousel.scrollLeft)
+        },600);
     };
+
+    useEffect(() => {
+        const carousel = carouselRef.current;
+        const newPosition = carousel.scrollLeft + (items.length * getItemWidth());
+        carousel.scrollLeft =  newPosition;
+        setTimeout(() => {
+            if (newPosition >= carousel.scrollWidth - carousel.clientWidth) {
+                items.push(...items);
+            }
+            setScrollPosition(carousel.scrollLeft)
+        },600);
+    }, []);
 
     return (
         <div className="carousel-container">
