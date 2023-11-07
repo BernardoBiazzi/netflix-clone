@@ -3,18 +3,25 @@ import { useState } from 'react';
 import logo from '../../assets/img/logo.png';
 import './navbar.css';
 import { useEffect } from 'react';
-import { FaSistrix, FaRegBell, FaRegUser } from "react-icons/fa";
+import { FaSistrix, FaRegBell, FaRegUser, FaAlignJustify, FaBars } from "react-icons/fa";
 
 const Navbar = () => {
     const [topDistance, setTopDistance] = useState(0);
+    const [innerWidth, setInnerWidth] = useState(window.innerWidth);
 
     const handleScroll = () => {
         setTopDistance(window.scrollY);
     };
 
+    const handleInnerWidth = () => {
+        setInnerWidth(window.innerWidth);
+    };
+
     useEffect(() => {
+        window.addEventListener('resize', handleInnerWidth);
         window.addEventListener('scroll', handleScroll);
         return () => {
+            window.removeEventListener('resize', handleInnerWidth);
             window.removeEventListener('scroll', handleScroll);
         };
     }, []);
@@ -23,12 +30,18 @@ const Navbar = () => {
         <div className={topDistance > 100 ? 'navbar fill-navbar' : 'navbar'}>
             <div className="left-side">
                 <img className="logo" src={logo}/>
-                <a href="#inicio" className="active">Início</a>
-                <a href="#series">Séries</a>
-                <a href="#filmes">Filmes</a>
-                <a href="#bombando">Bombando</a>
-                <a href="#minha-lista">Minha lista</a>
-                <a href="#idiomas">Navegar por idiomas</a>
+                {
+                    innerWidth > 800 ? (<>
+                        <a href="#inicio" className="active">Início</a>
+                        <a href="#series">Séries</a>
+                        <a href="#filmes">Filmes</a>
+                        <a href="#bombando">Bombando</a>
+                        <a href="#minha-lista">Minha lista</a>
+                        <a href="#idiomas">Navegar por idiomas</a>
+                    </>) : (<>
+                        <span><FaBars/></span>
+                    </>)
+                }
             </div>
             <div className="right-side">
                 <span><FaSistrix/></span>

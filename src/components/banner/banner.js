@@ -37,7 +37,7 @@ const Banner = () => {
                 }
                 return newIndex;
             });
-        }, 5000);
+        }, 10000);
         return () => clearInterval(interval);
     }, []);
     

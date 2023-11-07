@@ -1,6 +1,6 @@
 .navbar {
     display: flex;
-    padding: 20px 3.2vw;
+    padding: 20px clamp(20px, 3.2vw, 3.2vw);
     transition: background 0.5s ease;
     background-image: linear-gradient(180deg,rgba(0,0,0,.7) 10%,transparent);
     justify-content: space-between;
@@ -32,7 +32,12 @@
 
 .logo {
     width: 93px;
-    margin-right: 35px;
+    margin-right: clamp(15px, 3vw, 35px);
+}
+
+.left-side span {
+    color: white;
+    font-size: 24px;
 }
 
 .right-side {
