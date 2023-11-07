@@ -18,14 +18,14 @@ const Carousel = ({ title, items }) => {
     } 
 
     const handleLeft = () => {
-        const newPosition = carouselRef.current.scrollLeft - (3 * getItemWidth());
+        const newPosition = carouselRef.current.scrollLeft - (6 * getItemWidth() + 60);
         carouselRef.current.scrollLeft = newPosition;
         setTimeout(() => {setScrollPosition(carouselRef.current.scrollLeft)},600);
     };
 
     const handleRight = () => {
-        const newPosition = 3 * getItemWidth();
-        carouselRef.current.scrollLeft = newPosition;
+        const newPosition = carouselRef.current.scrollLeft + (6 * getItemWidth() + 60);
+        carouselRef.current.scrollLeft =  newPosition;
         setTimeout(() => {setScrollPosition(carouselRef.current.scrollLeft)},600);
     };
 
