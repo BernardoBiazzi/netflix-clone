@@ -20,11 +20,6 @@ const Carousel = ({ title, items }) => {
         };
     }, [carouselRef]);
 
-    useEffect(() => {
-        const carousel = carouselRef.current;
-        carousel.scrollLeft = getItemWidth();
-    }, []);
-
     const getItemWidth = () => {
         const firstItem = document.querySelector('.carousel-item');
         if (firstItem) {
