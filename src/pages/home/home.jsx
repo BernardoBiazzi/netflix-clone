@@ -20,8 +20,8 @@ const carousels = [
             { url: 'https://i0.wp.com/musically.com/wp-content/uploads/2023/08/Metal-Fest-Megadeth-Event-Key-Art-16-9.png' },
             { url: 'https://d1csarkz8obe9u.cloudfront.net/posterpreviews/horror-movie-facebook-video-design-template-f45b265ae0594ee9fc171ad2ba92ea1c_screen.jpg' },
         ],
-        },
-        { 
+    },
+    { 
         id: 2,
         title: 'Em alta',
         items: [
@@ -39,8 +39,8 @@ const carousels = [
             { url: 'https://wallpaperbat.com/img/718204-daredevil-netflix-wallpaper-top-free-daredevil-netflix-background.jpg' },
             { url: 'https://media.wired.co.uk/photos/606dacfc1dcb46afc3a1dac5/16:9/w_1920,h_1080,c_limit/Guardians.jpg' },
         ],
-        },
-        { 
+    },
+    { 
         id: 3, 
         title: 'Séries de fantasia para maratonar',
         items: [
@@ -58,8 +58,8 @@ const carousels = [
             { url: 'https://images.hdqwalls.com/download/aladdin-movie-poster-8k-e4-1366x768.jpg' },
             { url: 'https://wallpaperswide.com/download/the_flash_2023_film-wallpaper-2048x1152.jpg' },
         ],
-        },
-        { 
+    },
+    { 
         id: 4, 
         title: 'Lançamentos',
         items: [
@@ -77,8 +77,8 @@ const carousels = [
             { url: 'https://www.10wallpaper.com/wallpaper/1920x1080/1608/Resident_Evil_6_The_Final_Chapter-2016_Movie_Posters_Wallpaper_1920x1080.jpg' },
             { url: 'https://wallpapersmug.com/download/1600x900/eaad55/super-mario-bros-2023-movie.jpg' },
         ],
-        },
-        { 
+    },
+    { 
         id: 5, 
         title: 'Séries premiadas de suspense sombrio',
         items: [
@@ -96,8 +96,8 @@ const carousels = [
             { url: 'https://picstatio.com/large/4b11ac/Blade-Runner-2049-movie-poster.jpg' },
             { url: 'https://imgmedia.larepublica.pe/640x371/larepublica/original/2023/02/01/63dae07e79f7110bcb1a31ab.webp' },
         ],
-        },
-        { 
+    },
+    { 
         id: 6, 
         title: 'Séries criativas',
         items: [
@@ -120,12 +120,14 @@ const carousels = [
 
 const Home = () => {
     return (<>
-        <Banner></Banner>
-        {carousels.map((carousel) => {
-            return (
-                <Carousel key={carousel.id} title={carousel.title} items={carousel.items}></Carousel>
-            );
-        })}
+        <Banner/>
+        {carousels.map((carousel) => (
+            <Carousel 
+                key={carousel.id} 
+                title={carousel.title} 
+                items={carousel.items}>
+            </Carousel>
+        ))}
     </>);
 }
 
