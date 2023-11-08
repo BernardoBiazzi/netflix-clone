@@ -3,7 +3,7 @@ import { useState } from 'react';
 import logo from '../../assets/img/logo.png';
 import './navbar.css';
 import { useEffect } from 'react';
-import { FaSistrix, FaRegBell, FaRegUser, FaAlignJustify, FaBars } from "react-icons/fa";
+import { FaSistrix, FaRegBell, FaRegUser, FaBars } from "react-icons/fa";
 
 const Navbar = () => {
     const [topDistance, setTopDistance] = useState(0);
@@ -27,7 +27,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <div className={topDistance > 20 ? 'navbar fill-navbar' : 'navbar'}>
+        <div className={`navbar ${topDistance && 'fill-navbar'}`}>
             <div className="left-side">
                 <img className="logo" src={logo}/>
                 {

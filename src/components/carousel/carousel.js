@@ -57,9 +57,9 @@ const Carousel = ({ title, items }) => {
             {enableRightArrow && 
             <div className="right-button" onClick={rightClick}><FaChevronRight/></div>}
             <div className="carousel" ref={carouselRef}>
-                {items.map((item) => {
+                {items.map((item, index) => {
                     return (
-                        <div className="carousel-item">
+                        <div key={index} className="carousel-item">
                             <img src={item.url}></img>
                         </div>
                     );
