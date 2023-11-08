@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import './carousel.css';
+import './carousel.scss';
 import { useEffect, useRef, useState } from 'react';
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 

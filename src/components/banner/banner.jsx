@@ -1,5 +1,5 @@
 /* eslint-disable jsx-a11y/alt-text */
-import './banner.css'
+import './banner.scss'
 import top10 from '../../assets/img/top10.png'
 import { useEffect, useState } from 'react';
 import { FaPlay, FaInfoCircle } from "react-icons/fa";

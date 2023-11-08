@@ -1,0 +1,83 @@
+.carousel-container {
+    margin-bottom: 2.5vw;
+    position: relative;
+    z-index: 1;
+
+    h3 {
+        margin-left: clamp(15px, 3.2vw, 3.2vw);
+        margin-bottom: 0.5em;
+        font-weight: 500;
+        font-size: clamp(15px, 1.4vw, 28px);
+        color: white;
+        position: relative;
+    }
+
+    .left-button {
+        left: 0;
+    }
+    
+    .right-button {
+        right: 0;
+    }
+
+    .left-button,
+    .right-button {
+        position: absolute;
+        width: 3vw;
+        height: calc(100% - 2.5vw);
+        z-index: 1;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: transparent;
+        font-size: 2vw;
+        cursor: pointer;
+        transition: all 0.1s ease;
+        background: #1414148a;
+        border-radius: 4px;
+
+        @media (max-width: 768px) {
+            display: none;
+        }
+
+        &:hover {
+            font-size: 2.4vw;
+            background: #141414c9;
+        }
+    }
+
+    &:hover {
+        .left-button,
+        .right-button {
+            color: white;
+        }
+    }
+
+    .carousel {
+        padding: 0px clamp(15px, 3.2vw, 3.2vw);
+        display: flex;
+        overflow-x: scroll;
+        scroll-behavior: smooth;
+        gap: 10px;
+
+        &::-webkit-scrollbar {
+            display: none;
+        }
+
+        .carousel-item {
+            position: relative;
+            cursor: pointer;
+
+            img {
+                width: clamp(200px, 15vw, 341px);
+                aspect-ratio: 16/9;
+                border-radius: 4px;
+                transition: scale 0.1s ease;
+
+                &:hover {
+                    scale: 0.95;
+                }
+            }
+        }
+    }
+}

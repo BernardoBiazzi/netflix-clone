@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import { useState } from 'react';
 import logo from '../../assets/img/logo.png';
-import './navbar.css';
+import './navbar.scss';
 import { useEffect } from 'react';
 import { FaSistrix, FaRegBell, FaRegUser, FaBars } from "react-icons/fa";
 
