@@ -44,8 +44,10 @@ const Navbar = () => {
             </div>
             <div className="right-side">
                 <span><FaSistrix/></span>
-                <span><FaRegBell/></span>
-                <button><FaRegUser/></button>
+                {innerWidth > 800 && (<>
+                    <span><FaRegBell/></span>
+                    <button><FaRegUser/></button>
+                </>)}
             </div>
         </nav>
     );
