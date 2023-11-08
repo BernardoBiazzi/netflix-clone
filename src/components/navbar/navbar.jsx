@@ -27,7 +27,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <div className={`navbar ${topDistance && 'fill-navbar'}`}>
+        <div className={`navbar ${topDistance > 10 && 'fill-navbar'}`}>
             <div className="left-side">
                 <img className="logo" src={logo}/>
                 {
