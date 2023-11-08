@@ -43,21 +43,21 @@
     position: absolute;
     width: 36vw;
     top: 24vw;
-    left: 3.2vw;
+    left: max(15px, 3.2vw);
     z-index: 1;
     transform: translateY(-110%);
 }
 
 .description {
     position: absolute;
-    top: 24vw;
-    left: 3.2vw;
+    top: max(120px, 24vw);
+    left: max(15px, 3.2vw);
     width: clamp(320px, 36vw, 800px);
     z-index: 1;
 }
 
 .description .top-10 {
-    width: clamp(20px, 2.1vw, 2.1vw);
+    width: max(20px, 2.1vw);
     margin-right: 1vw;
 }
 
@@ -95,7 +95,7 @@
     gap: 10px;
     border: none;
     border-radius: 4px;
-    padding: .7vw 1.8vw;
+    padding: max(7px, .7vw) max(11px, 1.8vw);
     font-size: clamp(16px, 1.2vw, 25px);
     font-weight: 600;
     cursor: pointer;
