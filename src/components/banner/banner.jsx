@@ -5,7 +5,7 @@ import { useEffect, useState } from 'react';
 import { FaPlay, FaInfoCircle } from "react-icons/fa";
 
 const Banner = ({ banners }) => {
-    const [index, setIndex] = useState(1);
+    const [index, setIndex] = useState(0);
 
     useEffect(() => {
         const interval = setInterval(() => {
@@ -18,7 +18,9 @@ const Banner = ({ banners }) => {
             });
         }, 10000);
         return () => clearInterval(interval);
-    }, []);
+    }, [banners]);
+
+    if (!banners) return (<></>);
     
     return (
         <div className="banner">
