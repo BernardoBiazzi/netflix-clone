@@ -3,7 +3,7 @@ import { useState } from 'react';
 import logo from '../../assets/img/logo.png';
 import './navbar.scss';
 import { useEffect } from 'react';
-import { FaSistrix, FaRegBell, FaRegUser, FaBars } from "react-icons/fa";
+import { FaSistrix, FaRegBell, FaRegUser } from "react-icons/fa";
 import { NavLink } from 'react-router-dom';
 
 const Navbar = () => {
@@ -31,23 +31,19 @@ const Navbar = () => {
         <nav className={`navbar${topDistance > 10 ? ' fill-navbar' : ''}`}>
             <div className="left-side">
                 <img className="logo" src={logo}/>
-                {innerWidth > 800 ? (<>
+                {innerWidth > 800 && (<>
                     <NavLink to="/">Início</NavLink>
                     <NavLink to="series">Séries</NavLink>
                     <NavLink to="filmes">Filmes</NavLink>
                     <NavLink to="bombando">Bombando</NavLink>
                     <NavLink to="minha-lista">Minha lista</NavLink>
                     <NavLink to="idiomas">Navegar por idiomas</NavLink>
-                </>) : (<>
-                    <span><FaBars/></span>
                 </>)}
             </div>
             <div className="right-side">
-                <span><FaSistrix/></span>
-                {innerWidth > 800 && (<>
-                    <span><FaRegBell/></span>
-                    <button><FaRegUser/></button>
-                </>)}
+                <button><FaSistrix/></button>
+                <button><FaRegBell/></button>
+                <button><FaRegUser/></button>
             </div>
         </nav>
     );
