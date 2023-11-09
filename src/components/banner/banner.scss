@@ -115,11 +115,17 @@
             .watch-more {
                 background-color: white;
                 color: black;
+                &:hover {
+                    background-color: #cecece;
+                }
             }
 
             .more-info {
                 background-color: #6d6d6eb3;
                 color: white;
+                &:hover {
+                    background-color: #6d6d6e83;
+                }
             }
         }
     }

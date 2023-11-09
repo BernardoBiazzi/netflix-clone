@@ -4,20 +4,46 @@
     z-index: 1;
 
     h3 {
-        margin-left: clamp(15px, 3.2vw, 3.2vw);
-        margin-bottom: 0.5em;
-        font-weight: 500;
-        font-size: clamp(16px, 1.4vw, 28px);
-        color: white;
+        cursor: pointer;
+        display: flex;
+        width: fit-content;
         position: relative;
+        align-items: center;
+        margin-bottom: 0.5em;
+        margin-left: clamp(15px, 3.2vw, 3.2vw);
+        line-height: clamp(16px, 1.4vw, 28px);
+        font-size: clamp(16px, 1.4vw, 28px);
+        font-weight: 500;
+        color: white;
+        
+        &:hover span {
+            opacity: 1;
+            font-size: .9vw;
+            margin-left: 10px;
+        }
+        
+        span, svg {
+            opacity: 0;
+            margin-top: 5px;
+            color: #54b9c5;
+            @media (max-width: 1024px) {
+                display: none;
+            }
+        }
+
+        span {
+            font-size: 0px;
+            margin-left: 0px;
+            transition: all ease 0.5s;
+        }
+
+        svg {
+            font-size: 1.3vw;
+        }
     }
 
-    .left-button {
-        left: 0;
-    }
-    
-    .right-button {
-        right: 0;
+    &:hover h3 svg {
+        opacity: 1;
     }
 
     .left-button,
@@ -44,6 +70,14 @@
             font-size: 2.4vw;
             background: #141414c9;
         }
+    }
+
+    .left-button {
+        left: 0;
+    }
+    
+    .right-button {
+        right: 0;
     }
 
     &:hover {

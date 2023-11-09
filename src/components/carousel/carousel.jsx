@@ -1,7 +1,7 @@
 /* eslint-disable jsx-a11y/alt-text */
 import './carousel.scss';
 import { useEffect, useRef, useState } from 'react';
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaAngleRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const Carousel = ({ title, items }) => {
     const carouselRef = useRef(null);
@@ -51,7 +51,10 @@ const Carousel = ({ title, items }) => {
 
     return (
         <div className="carousel-container">
-            <h3>{title}</h3>
+            <h3>{title}
+                <span>Ver tudo</span>
+                <FaAngleRight></FaAngleRight>
+            </h3>
             {scrollPosition > 0 && 
             <div className="left-button" onClick={leftClick}><FaChevronLeft/></div>}
             {enableRightArrow && 
