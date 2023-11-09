@@ -1,3 +1,10 @@
+:root {
+  --background-color: #141414;
+  @media (max-width: 800px) {
+    --background-color: #0e0e0e;
+  }
+}
+
 body {
   margin: 0;
   padding: 0;
@@ -6,7 +13,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #141414;
+  background: var(--background-color);
 }
 
 code {
