@@ -29,10 +29,11 @@ const Banner = ({ banners }) => {
             <img className="banner-logo" src={banners[index].logo} />
             <img className="banner-background" src={banners[index].background} />
             <div className="description">
+                {banners[index]?.title &&
                 <div className="title">
                     <img className="top-10" src={top10}/>
                     <p>{banners[index].title}</p>
-                </div>
+                </div>}
                 <p className="text-description">
                     {banners[index].description}
                 </p>
