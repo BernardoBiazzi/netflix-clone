@@ -35,15 +35,10 @@
             text-decoration: none;
             margin: 0px 10px;
             font-size: 14px;
-        }
 
-        .active {
-            font-weight: bold;
-        }
-
-        span {
-            color: white;
-            font-size: 24px;
+            &.active {
+                font-weight: bold;
+            }
         }
     }
 
