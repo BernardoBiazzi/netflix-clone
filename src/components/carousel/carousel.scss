@@ -4,23 +4,17 @@
     z-index: 1;
 
     h3 {
-        cursor: pointer;
         display: flex;
+        color: white;
+        cursor: pointer;
+        font-weight: 500;
         width: fit-content;
         position: relative;
         align-items: center;
         margin-bottom: 0.5em;
-        margin-left: clamp(15px, 3.2vw, 3.2vw);
-        line-height: clamp(16px, 1.4vw, 28px);
         font-size: clamp(16px, 1.4vw, 28px);
-        font-weight: 500;
-        color: white;
-        
-        &:hover span {
-            opacity: 1;
-            font-size: .9vw;
-            margin-left: 10px;
-        }
+        line-height: clamp(16px, 1.4vw, 28px);
+        margin-left: clamp(15px, 3.2vw, 3.2vw);
         
         span, svg {
             opacity: 0;
@@ -31,14 +25,19 @@
             }
         }
 
+        svg {
+            font-size: 1.3vw;
+        }
+
         span {
             font-size: 0px;
-            margin-left: 0px;
             transition: all ease 0.3s;
         }
 
-        svg {
-            font-size: 1.3vw;
+        &:hover span {
+            opacity: 1;
+            font-size: .9vw;
+            margin-left: 10px;
         }
     }
 
@@ -48,27 +47,28 @@
 
     .left-button,
     .right-button {
-        position: absolute;
         width: 3vw;
-        height: calc(100% - 2.5vw);
-        z-index: 1;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: transparent;
-        font-size: 2vw;
         cursor: pointer;
-        transition: all 0.1s ease;
-        background: #1414148a;
-        border-radius: 4px;
+        height: calc(100% - 2.5vw);
 
-        @media (max-width: 1024px) {
-            display: none;
-        }
+        font-size: 2vw;
+        color: transparent;
+        background: #1414148a;
+        transition: all 0.1s ease;
 
         &:hover {
             font-size: 2.4vw;
             background: #141414c9;
+        }
+
+        z-index: 1;
+        display: flex;
+        position: absolute;
+        align-items: center;
+        justify-content: center;
+
+        @media (max-width: 1024px) {
+            display: none;
         }
     }
 
@@ -89,25 +89,31 @@
 
     .carousel {
         padding: 0px clamp(15px, 3.2vw, 3.2vw);
-        display: flex;
-        overflow-x: scroll;
         scroll-behavior: smooth;
+        position: relative;
+        overflow-x: scroll;
+        display: flex;
         gap: 10px;
+
+        @media (max-width: 1024px) {
+            margin-left: clamp(15px, 3.2vw, 3.2vw);
+            scroll-snap-type: x mandatory;
+        }
 
         &::-webkit-scrollbar {
             display: none;
         }
 
         .carousel-item {
+            scroll-snap-align: start;
             position: relative;
             cursor: pointer;
 
             img {
                 width: clamp(175px, 15vw, 341px);
-                aspect-ratio: 16/9;
-                border-radius: 4px;
                 transition: scale 0.1s ease;
-
+                border-radius: 4px;
+                aspect-ratio: 16/9;
                 &:hover {
                     scale: 0.95;
                 }
