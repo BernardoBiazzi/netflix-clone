@@ -1,5 +1,5 @@
 .carousel-container {
-    margin-bottom: 2.5vw;
+    margin-bottom: 2.5dvw;
     position: relative;
     z-index: 1;
 
@@ -12,9 +12,9 @@
         position: relative;
         align-items: center;
         margin-bottom: 0.5em;
-        font-size: clamp(16px, 1.4vw, 28px);
-        line-height: clamp(16px, 1.4vw, 28px);
-        margin-left: clamp(15px, 3.2vw, 3.2vw);
+        font-size: clamp(16px, 1.4dvw, 28px);
+        line-height: clamp(16px, 1.4dvw, 28px);
+        margin-left: clamp(15px, 3.2dvw, 3.2dvw);
         
         span, svg {
             opacity: 0;
@@ -26,7 +26,7 @@
         }
 
         svg {
-            font-size: 1.3vw;
+            font-size: 1.3dvw;
         }
 
         span {
@@ -36,7 +36,7 @@
 
         &:hover span {
             opacity: 1;
-            font-size: .9vw;
+            font-size: .9dvw;
             margin-left: 10px;
         }
     }
@@ -47,18 +47,15 @@
 
     .left-button,
     .right-button {
-        width: 3vw;
         cursor: pointer;
-        height: calc(100% - 2.5vw);
-
-        font-size: 2vw;
-        color: transparent;
-        background: #1414148a;
+        width: 3.2dvw;
+        height: calc(100% - 2.5dvw);
         transition: all 0.1s ease;
+        color: transparent;
+        font-size: 2dvw;
 
         &:hover {
-            font-size: 2.4vw;
-            background: #141414c9;
+            font-size: 2.4dvw;
         }
 
         z-index: 1;
@@ -74,10 +71,18 @@
 
     .left-button {
         left: 0;
+        background: linear-gradient(90deg, rgba(20, 20, 20, 0.7) 10%, rgba(20, 20, 20, 0.6) 50%, transparent);
+        &:hover {
+            background: linear-gradient(90deg, rgba(20, 20, 20, 0.8) 10%, rgba(20, 20, 20, 0.7) 50%, transparent);
+        }
     }
     
     .right-button {
         right: 0;
+        background: linear-gradient(270deg, rgba(0, 0, 0, 0.7) 10%, rgba(0, 0, 0, 0.6) 50%, transparent);
+        &:hover {
+            background: linear-gradient(270deg, rgba(0, 0, 0, 0.8) 10%, rgba(0, 0, 0, 0.7) 50%, transparent);
+        }
     }
 
     &:hover {
@@ -88,16 +93,16 @@
     }
 
     .carousel {
-        padding: 0px clamp(15px, 3.2vw, 3.2vw);
+        padding: 0px clamp(15px, 3.2dvw, 3.2dvw);
         scroll-behavior: smooth;
         position: relative;
         overflow-x: scroll;
         display: flex;
         gap: 10px;
-
+        
         @media (max-width: 1024px) {
-            margin-left: clamp(15px, 3.2vw, 3.2vw);
-            scroll-snap-type: x mandatory;
+            margin-left: clamp(15px, 3.2dvw, 3.2dvw);
+            scroll-snap-type: x proximity;
         }
 
         &::-webkit-scrollbar {
@@ -110,7 +115,7 @@
             cursor: pointer;
 
             img {
-                width: clamp(175px, 15vw, 341px);
+                width: clamp(175px, 15dvw, 341px);
                 transition: scale 0.1s ease;
                 border-radius: 4px;
                 aspect-ratio: 16/9;

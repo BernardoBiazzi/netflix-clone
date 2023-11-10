@@ -1,10 +1,10 @@
 .banner {
     position: relative;
     transition: margin 0.25s ease;
-    margin-bottom: -15vw;
+    margin-bottom: -15dvw;
 
     @media (max-width: 1080px) {
-        margin-bottom: -10vw;
+        margin-bottom: -10dvw;
     }
     
     @media (max-width: 900px) {
@@ -12,19 +12,19 @@
     }
     
     @media (max-width: 500px) {
-        margin-bottom: 20vw;
+        margin-bottom: 20dvw;
     }
     
     @media (max-width: 360px) {
-        margin-bottom: 25vw;
+        margin-bottom: 25dvw;
     }
 
     @media (max-width: 320px) {
-        margin-bottom: 45vw;
+        margin-bottom: 45dvw;
     }
 
     @media (max-width: 280px) {
-        margin-bottom: 55vw;
+        margin-bottom: 55dvw;
     }
 
     .vinheta {
@@ -54,33 +54,33 @@
     .banner-logo {
         z-index: 1;
         position: absolute;
-        width: clamp(200px, 36vw, 36vw);
-        top: clamp(110px, 24vw, 24vw);
-        left: clamp(15px, 3.2vw, 3.2vw);
+        width: clamp(200px, 36dvw, 36dvw);
+        top: clamp(110px, 24dvw, 24dvw);
+        left: clamp(15px, 3.2dvw, 3.2dvw);
         transform: translateY(-110%);
     }
 
     .description {
         position: absolute;
-        top: clamp(120px, 24vw, 24vw);
-        left: clamp(15px, 3.2vw, 3.2vw);
-        width: clamp(320px, 36vw, 800px);
-        max-width: calc(100vw - 30px);
+        top: clamp(120px, 24dvw, 24dvw);
+        left: clamp(15px, 3.2dvw, 3.2dvw);
+        width: clamp(320px, 36dvw, 800px);
+        max-width: calc(100dvw - 30px);
         z-index: 1;
 
         .top-10 {
-            width: clamp(20px, 2.1vw, 2.1vw);
-            margin-right: clamp(10px, 1vw, 1vw);
+            width: clamp(20px, 2.1dvw, 2.1dvw);
+            margin-right: clamp(10px, 1dvw, 1dvw);
         }
 
         .title {
             display: flex;
             align-items: center;
-            font-size: clamp(22px, 1.6vw, 25px);
+            font-size: clamp(22px, 1.6dvw, 25px);
             font-weight: bold;
             color: white;
             text-shadow: 2px 2px 4px rgba(0,0,0,.45);
-            margin: 1vw 0;
+            margin: 1dvw 0;
 
             p {
                 margin: 0;
@@ -89,15 +89,15 @@
 
         .text-description {
             color: white;
-            font-size: clamp(14px, 1.2vw, 25px);
+            font-size: clamp(14px, 1.2dvw, 25px);
             font-weight: 400;
             text-shadow: 2px 2px 4px rgba(0,0,0,.45);
-            margin-bottom: clamp(20px, 1.7vw, 25px);
+            margin-bottom: clamp(20px, 1.7dvw, 25px);
         }
 
         .action-buttons {
             display: flex;
-            gap: clamp(10px, 1vw, 1vw);
+            gap: clamp(10px, 1dvw, 1dvw);
 
             .watch-more,
             .more-info {
@@ -106,8 +106,8 @@
                 gap: 10px;
                 border: none;
                 border-radius: 4px;
-                padding: clamp(7px, .7vw, .7vw) clamp(11px, 1.8vw, 1.8vw);
-                font-size: clamp(16px, 1.2vw, 25px);
+                padding: clamp(7px, .7dvw, .7dvw) clamp(11px, 1.8dvw, 1.8dvw);
+                font-size: clamp(16px, 1.2dvw, 25px);
                 font-weight: 600;
                 cursor: pointer;
             }
