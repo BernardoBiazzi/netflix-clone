@@ -32,12 +32,12 @@ const Banner = ({ banners }) => {
             )}
             <p className="text-description">{banner.description}</p>
             <div className="action-buttons">
-            <button className="watch-more">
-                <FaPlay /> Assistir
-            </button>
-            <button className="more-info">
-                <FaInfoCircle /> Mais informações
-            </button>
+                <button className="watch-more">
+                    <FaPlay /> Assistir
+                </button>
+                <button className="more-info">
+                    <FaInfoCircle /> Mais informações
+                </button>
             </div>
         </div>
         </div>
