@@ -1,5 +1,6 @@
 import Banner from "../../components/banner/banner";
 import Carousel from "../../components/carousel/carousel";
+import useDocumentTitle from "../../hooks/useDocumentTitle";
 
 const banners = [
     {
@@ -134,6 +135,7 @@ const carousels = [
 ];
 
 const Series = () => {
+    useDocumentTitle('Séries');
     return (<>
         <Banner banners={banners}/>
         {carousels.map((carousel) => (
