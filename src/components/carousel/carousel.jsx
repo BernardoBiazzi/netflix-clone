@@ -1,7 +1,6 @@
-/* eslint-disable jsx-a11y/alt-text */
 import './carousel.scss';
 import { useEffect, useRef, useState } from 'react';
-import { FaAngleRight, FaChevronLeft, FaChevronRight } from "react-icons/fa";
+import { FaAngleRight, FaChevronLeft, FaChevronRight } from 'react-icons/fa';
 
 const Carousel = ({ title, items }) => {
     const carouselRef = useRef(null);
@@ -9,8 +8,8 @@ const Carousel = ({ title, items }) => {
     const [enableRightArrow, setEnableRightArrow] = useState(true);
 
     const handleScrollPosition = () => {
-        setScrollPosition(carouselRef.current.scrollLeft)
-    }
+        setScrollPosition(carouselRef.current.scrollLeft);
+    };
 
     useEffect(() => {
         const carousel = carouselRef.current;
@@ -18,55 +17,50 @@ const Carousel = ({ title, items }) => {
         return () => {
             carousel.removeEventListener('scroll', handleScrollPosition);
         };
-    }, [carouselRef]);
+    }, []);
 
     const getItemWidth = () => {
-        const firstItem = document.querySelector('.carousel-item');
-        if (firstItem) {
-            const itemRect = firstItem.getBoundingClientRect();
-            return itemRect.width + 10;
-        } else {
-            return 0;
-        }
-    } 
-
-    const leftClick = () => {
-        const carousel = carouselRef.current;
-        const newPosition = carousel.scrollLeft - (6 * getItemWidth());
-        carousel.scrollLeft = newPosition;
-        setEnableRightArrow(true);
+        const firstItem = carouselRef.current.querySelector('.carousel-item');
+        return firstItem ? firstItem.getBoundingClientRect().width + 10 : 0;
     };
 
-    const rightClick = () => {
+    const calculateNewPosition = (direction) => {
+        const currentPosition = carouselRef.current.scrollLeft;
+        const movement = direction === 'left' ? -6 : 6;
+        return currentPosition + movement * getItemWidth();
+    };
+
+    const handleArrowClick = (direction) => {
+        const newPosition = calculateNewPosition(direction);
         const carousel = carouselRef.current;
-        const newPosition = carousel.scrollLeft + (6 * getItemWidth());
         carousel.scrollLeft = newPosition;
         const scrollLimit = carousel.scrollWidth - carousel.clientWidth;
-        if (newPosition >= scrollLimit) {
-            setEnableRightArrow(false);
-        } else {
-            setEnableRightArrow(true);
-        }
+        setEnableRightArrow(newPosition < scrollLimit);
     };
 
     return (
         <div className="carousel-container">
-            <h3>{title}
+            <h3>
+                {title}
                 <span>Ver tudo</span>
-                <FaAngleRight></FaAngleRight>
+                <FaAngleRight />
             </h3>
-            {scrollPosition > 0 && 
-            <div className="left-button" onClick={leftClick}><FaChevronLeft/></div>}
-            {enableRightArrow && 
-            <div className="right-button" onClick={rightClick}><FaChevronRight/></div>}
+            {scrollPosition > 0 && (
+                <div className="left-button" onClick={() => handleArrowClick('left')}>
+                    <FaChevronLeft />
+                </div>
+            )}
+            {enableRightArrow && (
+                <div className="right-button" onClick={() => handleArrowClick('right')}>
+                    <FaChevronRight />
+                </div>
+            )}
             <div className="carousel" ref={carouselRef}>
-                {items.map((item, index) => {
-                    return (
-                        <div key={index} className="carousel-item">
-                            <img src={item.url}></img>
-                        </div>
-                    );
-                })}
+                {items.map((item, index) => (
+                    <div key={index} className="carousel-item">
+                        <img src={item.url} alt={`carousel-item-${index}`} />
+                    </div>
+                ))}
             </div>
         </div>
     );
