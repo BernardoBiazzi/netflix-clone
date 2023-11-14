@@ -42,9 +42,9 @@ const Navbar = () => {
                 {innerWidth > 800 && navLinks}
             </div>
             <div className="right-side">
-                <button><FaSistrix/></button>
-                <button><FaRegBell/></button>
-                <button><FaRegUser/></button>
+                <button data-testid="search-button"><FaSistrix/></button>
+                <button data-testid="bell-button"><FaRegBell/></button>
+                <button data-testid="user-button"><FaRegUser/></button>
             </div>
         </nav>
     );

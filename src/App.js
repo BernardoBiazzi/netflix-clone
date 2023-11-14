@@ -5,7 +5,7 @@ import './App.scss';
 function App() {
   return (<>
     <Navbar/>
-    <div className="root-outlet">
+    <div className="root-outlet" data-testid="app">
         <Outlet/>
     </div>
   </>);
