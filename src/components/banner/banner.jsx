@@ -18,28 +18,28 @@ const Banner = ({ banners }) => {
     const banner = banners[index];
 
     return (
-        <div className="banner">
-        <div className="fade"></div>
-        <div className="vinheta"></div>
-        <img className="banner-logo" src={banner.logo} />
-        <img className="banner-background" src={banner.background} />
-        <div className="description">
-            {banner.title && (
-                <div className="title">
-                    <img className="top-10" src={top10} alt="Top 10" />
-                    <p>{banner.title}</p>
+        <div className="banner" data-testid="banner">
+            <div className="fade"></div>
+            <div className="vinheta"></div>
+            <img className="banner-logo" src={banner.logo} />
+            <img className="banner-background" src={banner.background} />
+            <div className="description">
+                {banner.title && (
+                    <div className="title">
+                        <img className="top-10" src={top10} alt="Top 10" />
+                        <p>{banner.title}</p>
+                    </div>
+                )}
+                <p className="text-description">{banner.description}</p>
+                <div className="action-buttons">
+                    <button className="watch-more">
+                        <FaPlay /> Assistir
+                    </button>
+                    <button className="more-info">
+                        <FaInfoCircle /> Mais informações
+                    </button>
                 </div>
-            )}
-            <p className="text-description">{banner.description}</p>
-            <div className="action-buttons">
-                <button className="watch-more">
-                    <FaPlay /> Assistir
-                </button>
-                <button className="more-info">
-                    <FaInfoCircle /> Mais informações
-                </button>
             </div>
-        </div>
         </div>
     );
 };
