@@ -27,7 +27,7 @@ const Navbar = () => {
     }, []);
 
     const navLinks = (<>
-        <NavLink to="/">Início</NavLink>
+        <NavLink to="inicio">Início</NavLink>
         <NavLink to="series">Séries</NavLink>
         <NavLink to="filmes">Filmes</NavLink>
         <NavLink to="bombando">Bombando</NavLink>

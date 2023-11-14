@@ -1,0 +1,44 @@
+.profile-selection {
+    width: 100dvw;
+    height: 100dvh;
+    overflow: hidden;
+    position: fixed;
+    z-index: 3;
+    top: 0;
+
+    display: flex;
+    flex-flow: column;
+    align-items: center;
+    justify-content: center;
+    background: var(--background-color);
+
+    h1 {
+        color: #fff;
+        font-size: 3.5vw;
+        margin-top: -7.2vw;
+        font-weight: unset;
+    }
+
+    .profiles-container {
+        display: flex;
+        gap: 2vw;
+
+        .profile {
+            gap: .6em;
+            display: flex;
+            cursor: pointer;
+            flex-flow: column;
+    
+            img {
+                width: 10vw;
+                border-radius: 4px;
+            }
+    
+            span {
+                color: gray;
+                font-size: 1.3vw;
+                text-align: center;
+            }
+        }
+    }
+}

@@ -11,7 +11,7 @@ const Error = () => {
         <div className="error-page">
             <FaSadTear></FaSadTear>
             Página inexistente
-            <NavLink to="/">
+            <NavLink to="inicio">
                 <FaHome></FaHome>
                 Voltar para o Início
             </NavLink>

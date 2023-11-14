@@ -4,6 +4,7 @@ import Error from "./pages/error/error";
 import Movies from "./pages/movies/movies";
 import Series from "./pages/series/series";
 import { createBrowserRouter } from "react-router-dom";
+import Profiles from "./pages/profiles/profiles";
 
 export const router = createBrowserRouter([
     {
@@ -13,6 +14,10 @@ export const router = createBrowserRouter([
         children: [
             {
                 path: '/',
+                element: <Profiles/>
+            },
+            {
+                path: 'inicio',
                 element: <Home/>
             },
             {
