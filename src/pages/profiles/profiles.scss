@@ -1,6 +1,7 @@
 .profile-selection {
     width: 100dvw;
     height: 100dvh;
+    user-select: none;
     overflow: hidden;
     position: fixed;
     z-index: 3;
@@ -32,12 +33,23 @@
             img {
                 width: 10vw;
                 border-radius: 4px;
+                box-sizing: border-box;
             }
     
             span {
                 color: gray;
                 font-size: 1.3vw;
                 text-align: center;
+            }
+
+            &:hover {
+                img {
+                    border: solid 4px white;
+                }
+
+                span {
+                    color: white;
+                }
             }
         }
     }
