@@ -13,7 +13,7 @@ const Error = () => {
             Página inexistente
             <NavLink to="/">
                 <FaHome></FaHome>
-                Voltar pro Início
+                Voltar para o Início
             </NavLink>
         </div>
     </>);

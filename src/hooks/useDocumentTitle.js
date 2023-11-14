@@ -4,6 +4,6 @@ const useDocumentTitle = (title = 'Início') => {
     useEffect(() => {
         document.title = `${title} - Netflix`;
     }, [title]);
-}
+};
 
-export default useDocumentTitle
+export default useDocumentTitle;
